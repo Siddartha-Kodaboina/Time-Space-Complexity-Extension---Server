@@ -16,6 +16,63 @@ const createPrompt = (selectedText) => {
     2. Otherwise follow the below examples to do analyze the var selected_text and provide the time and \n
     complexity of the code just like below in the same format, please do not explain anything
 
+    HERE ARE FEW TRICKY CASES
+    Tricky Example 1:
+    Code:
+        void trickyLoop(int n) {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i + j == n - 1)
+                        break;
+                }
+            }
+        }
+    Time:O(N**2)|Space:O(1)
+
+    Tricky Example 2:
+    Code:
+        int trickyRecursion(int n) {
+            if (n <= 1)
+                return n;
+            return trickyRecursion(n - 1) + trickyRecursion(n - 3);
+        }
+
+    Time:O(2**(N/3))|Space:O(N)
+
+    Tricky Example 3:
+    Code:
+        void decrementIncrementLoop(int n) {
+            for (int i = n; i > 0; i /= 2) {
+                for (int j = 0; j < i; j++) {
+                    // Some operation
+                }
+            }
+        }
+    Time:O(N)|Space:O(1)
+
+    Tricky Example 4:
+    Code:
+        void multipleRecursion(int n) {
+            if (n <= 0)
+                return;
+            if (n % 2 == 0)
+                multipleRecursion(n / 2);
+            else
+                multipleRecursion(n - 1);
+        }
+    Time:O(log N)|Space:O(log N)
+
+    Tricky Example 5:
+    Code:
+        for ( int i = 1; i < n; i *= 2 ) {
+            for ( int j = 0; j < i; j++ ) {
+            // cout << " Constant time Operation";
+            }
+        }
+
+    Time:O(N)|Space:O(1)
+
+    HERE ARE FEW GENERAL EXAMPLES
     Example1:
     CODE: 
         bool linearSearch(int arr[], int n, int key) {
@@ -149,63 +206,7 @@ const createPrompt = (selectedText) => {
         }
     Time:O(N!)|Space:O(N)
 
-    Here are some tricky cases
-    Tricky Example 1:
-    Code:
-        void trickyLoop(int n) {
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (i + j == n - 1)
-                        break;
-                }
-            }
-        }
-    Time:O(N**2)|Space:O(1)
-
-    Tricky Example 2:
-    Code:
-        int trickyRecursion(int n) {
-            if (n <= 1)
-                return n;
-            return trickyRecursion(n - 1) + trickyRecursion(n - 3);
-        }
-
-    Time:O(2**(N/3))|Space:O(N)
-
-    Tricky Example 3:
-    Code:
-        void decrementIncrementLoop(int n) {
-            for (int i = n; i > 0; i /= 2) {
-                for (int j = 0; j < i; j++) {
-                    // Some operation
-                }
-            }
-        }
-    Time:O(N)|Space:O(1)
-
-    Tricky Example 4:
-    Code:
-        void multipleRecursion(int n) {
-            if (n <= 0)
-                return;
-            if (n % 2 == 0)
-                multipleRecursion(n / 2);
-            else
-                multipleRecursion(n - 1);
-        }
-    Time:O(log N)|Space:O(log N)
-
-    Tricky Example 5:
-    Code:
-        void changingStepsLoop(int n) {
-            for (int i = 1; i < n; i *= 3) {
-                for (int j = 0; j < i; j++) {
-                    // Some operation
-                }
-            }
-        }
-    Time:O(N)|Space:O(1)
-
+    
     
 
     Please generate time snad space complexities as the format mentioned inside the  <output-format> laterals, please do not print any other context
